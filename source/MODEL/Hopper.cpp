@@ -65,7 +65,7 @@ Hopper::DataItem::~DataItem(void) {
 Hopper::Hopper(void) :
 		Application(true), drawMode(true), frameNumber(0) {
 
-	Hopper = this;
+	hopper = this;
 
 	// Tell osg::Referenced to use thread-safe reference counting. We do
 	// this here for all applications and all configurations though it is
@@ -93,15 +93,15 @@ Hopper::~Hopper(void) {
  * addObjects
  */
 void Hopper::addObjects(void) {
-	GetScene()->AddDrawable(plant.get());
+	GetScene()->AddDrawable(europa.get());
 } // end addObjects()
 
 /*
  * createHopper
  */
 void Hopper::createHopper(void) {
-	plant = new Object("Hopper");
-	plant->LoadFile("../data/rocket/europa.3ds");
+	europa = new Object("Hopper");
+	europa->LoadFile("../data/rocket/europa.3ds");
 } // end createHopper
 
 /*
@@ -195,7 +195,7 @@ void Hopper::initContext(GLContextData & glContextData) const {
 	osg::Group * root = new osg::Group();
 	dataItem->root = root;
 	root->setName("Root");
-	root->addChild(Hopper->GetRootNode());
+	root->addChild(hopper->GetRootNode());
 
 	// Add the tree to the viewer and set properties
 	Guard<MutexPosix> viewerGuard(dataItem->viewerLock);
@@ -210,8 +210,8 @@ void Hopper::initContext(GLContextData & glContextData) const {
  * toggleHopper
  */
 void Hopper::toggleHopper(void) {
-	plant.get()->DeltaDrawable::SetActive(
-			!plant.get()->DeltaDrawable::GetActive());
+	europa.get()->DeltaDrawable::SetActive(
+			!europa.get()->DeltaDrawable::GetActive());
 } // end toggleHopper()
 
 /*

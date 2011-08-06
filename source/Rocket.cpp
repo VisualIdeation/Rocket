@@ -425,7 +425,7 @@ void Rocket::menuToggleSelectCallback(
 		GLMotif::ToggleButton::ValueChangedCallbackData * callbackData) {
 	/* Adjust program state based on which toggle button changed state: */
 	if (strcmp(callbackData->toggle->getName(), "showPlantToggle") == 0) {
-		hopper->toggleRocket();
+		hopper->toggleHopper();
 		showPlantToggle->setToggle(callbackData->set);
 		showPlantToggleRD->setToggle(callbackData->set);
 	} else if (strcmp(callbackData->toggle->getName(), "wireframeToggle") == 0) {

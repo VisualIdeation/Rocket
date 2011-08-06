@@ -73,7 +73,7 @@ public:
 	int frameNumber;
 	osg::ref_ptr<osg::FrameStamp> frameStamp;
 	double lastFrameTime;
-	RefPtr<Object> plant;
+	RefPtr<Object> europa;
 	osg::ref_ptr<osg::NodeVisitor> updateVisitor;
 private:
 	void createHopper(void);
