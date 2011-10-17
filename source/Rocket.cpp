@@ -273,6 +273,15 @@ GLMotif::PopupWindow * Rocket::createRenderDialog(void) {
 	wireframeToggleRD->getValueChangedCallbacks().add(this,
 			&Rocket::menuToggleSelectCallback);
 
+	lightToggleRD = new GLMotif::ToggleButton("lightToggle", rowColumn,
+			"Light");
+	lightToggleRD->setBorderWidth(0.0f);
+	lightToggleRD->setMarginWidth(0.0f);
+	lightToggleRD->setHAlignment(GLFont::Left);
+	lightToggleRD->setToggle(true);
+	lightToggleRD->getValueChangedCallbacks().add(this,
+			&Rocket::menuToggleSelectCallback);
+
 	rowColumn->manageChild();
 
 	return renderDialogPopup;
@@ -304,6 +313,13 @@ GLMotif::Popup * Rocket::createRenderTogglesMenu(void) {
 			renderTogglesMenu, "Wireframe");
 	wireframeToggle->setToggle(false);
 	wireframeToggle->getValueChangedCallbacks().add(this,
+			&Rocket::menuToggleSelectCallback);
+
+	/* Create a toggle button to render Light: */
+	lightToggle = new GLMotif::ToggleButton("lightToggle",
+			renderTogglesMenu, "Light");
+	lightToggle->setToggle(true);
+	lightToggle->getValueChangedCallbacks().add(this,
 			&Rocket::menuToggleSelectCallback);
 
 	/* Calculate the submenu's proper layout: */
@@ -432,6 +448,10 @@ void Rocket::menuToggleSelectCallback(
 		hopper->toggleWireframe();
 		wireframeToggle->setToggle(callbackData->set);
 		wireframeToggleRD->setToggle(callbackData->set);
+	} else if (strcmp(callbackData->toggle->getName(), "lightToggle") == 0) {
+		hopper->toggleLight();
+		lightToggle->setToggle(callbackData->set);
+		lightToggleRD->setToggle(callbackData->set);
 	} else if (strcmp(callbackData->toggle->getName(), "showRenderDialogToggle")
 			== 0) {
 		if (callbackData->set) {

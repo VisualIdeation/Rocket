@@ -39,6 +39,7 @@ using namespace dtUtil;
 
 namespace dtCore {
 class Environment;
+class InfiniteLight;
 class Object;
 }
 class dMass;
@@ -66,6 +67,7 @@ public:
 	virtual void display(GLContextData& contextData) const;
 	void frame(void);
 	virtual void initContext(GLContextData& contextData) const;
+	void toggleLight(void);
 	void toggleHopper(void);
 	void toggleWireframe(void);
 	Hopper * hopper;
@@ -74,6 +76,7 @@ public:
 	osg::ref_ptr<osg::FrameStamp> frameStamp;
 	double lastFrameTime;
 	RefPtr<Object> europa;
+	RefPtr<InfiniteLight> globalInfinite;
 	osg::ref_ptr<osg::NodeVisitor> updateVisitor;
 private:
 	void createHopper(void);
