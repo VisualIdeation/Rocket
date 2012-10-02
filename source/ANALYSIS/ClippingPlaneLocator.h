@@ -12,7 +12,7 @@
 #include <Rocket.h>
 
 /* Vrui includes */
-#include <Vrui/Tools/LocatorTool.h>
+#include <Vrui/LocatorTool.h>
 
 // Begin forward declarations
 class ClippingPlane;

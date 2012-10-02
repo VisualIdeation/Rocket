@@ -8,7 +8,7 @@
 #include <iostream>
 
 /* Vrui includes */
-#include <Vrui/Tools/LocatorTool.h>
+#include <Vrui/LocatorTool.h>
 #include <Geometry/Point.h>
 #include <Geometry/Vector.h>
 #include <Geometry/OrthogonalTransformation.h>

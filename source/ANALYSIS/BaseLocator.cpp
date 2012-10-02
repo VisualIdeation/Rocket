@@ -7,7 +7,7 @@
  */
 
 /* Vrui includes */
-#include <Vrui/Tools/LocatorTool.h>
+#include <Vrui/LocatorTool.h>
 
 #include <ANALYSIS/BaseLocator.h>
 #include <Rocket.h>

@@ -14,7 +14,7 @@
 #include <GLMotif/Slider.h>
 #include <GLMotif/ToggleButton.h>
 #include <Misc/CallbackData.h>
-#include <Vrui/Tools/LocatorTool.h>
+#include <Vrui/LocatorTool.h>
 #include <Vrui/LocatorToolAdapter.h>
 #include <Vrui/ToolManager.h>
 #include <Vrui/Application.h>

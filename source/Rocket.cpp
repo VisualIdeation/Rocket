@@ -41,7 +41,7 @@
 #include <GLMotif/RowColumn.h>
 #include <GLMotif/TextField.h>
 #include <Vrui/CoordinateManager.h>
-#include <Vrui/Tools/SurfaceNavigationTool.h>
+#include <Vrui/SurfaceNavigationTool.h>
 #include <Vrui/Vrui.h>
 #include <Vrui/Application.h>
 

@@ -96,10 +96,10 @@ Hopper::~Hopper(void) {
 void Hopper::addObjects(void) {
 	// create an infinite light
 	globalInfinite = new InfiniteLight(4, "GlobalInfiniteLight");
-	GetScene()->AddDrawable(globalInfinite.get());
+	GetScene()->AddChild(globalInfinite.get());
 	globalInfinite->SetEnabled(true);
 
-	GetScene()->AddDrawable(europa.get());
+	GetScene()->AddChild(europa.get());
 } // end addObjects()
 
 /*
@@ -107,7 +107,7 @@ void Hopper::addObjects(void) {
  */
 void Hopper::createHopper(void) {
 	europa = new Object("Hopper");
-	europa->LoadFile("../data/rocket/europa.3ds");
+	europa->LoadFile("../data/Rocket/europa.3ds");
 } // end createHopper
 
 /*
